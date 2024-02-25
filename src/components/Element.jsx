@@ -6,12 +6,15 @@ const Element = ({data}) => {
     const parts=data.groupBlock.split(' ')
     const name=parts[0]
   return (
+    <div className='hover:scale-105 transition-all duration-300 ease-in-out'>
+
     <div className={`${name} element`}>
         <span className='text-[12px] absolute'>{data.atomicNumber}</span>
         <div className='flex flex-col text-center pt-[10px]'>
         <span className='text-[24px]'>{data.symbol}</span>
         <span className='text-[11px]'>{data.name}</span>
         </div>
+    </div>
     </div>
   )
 }
