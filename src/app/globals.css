@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+.element{
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 5px;
+  background-color: rgba(59, 58, 58, 0.789);
+  font-family: "Dancing Script", cursive;
+  color: white;
+}
+
+.transition{
+  background-color:rgb(174, 36, 36);
+}
+
+.alkali{
+  background-color: blue;
+}
+
+.alkaline{
+  background-color: rgb(35, 91, 165);
+}
+
+.noble{
+  background-color: lightblue;
+}
+
+.metalloid{
+  background-color: greenyellow;
+}
+
+.nonmetal{
+background-color: fuchsia;
+}
+
+.lanthanoid{
+  background-color: darkseagreen;
+}
+
+.actinoid{
+  background-color: yellow;
+}
+
+.metal{
+  background-color: rgb(119, 50, 175);
+}
+
+.halogen{
+  background-color: orange;
+}
+
+.post-transition{
+  background-color: cadetblue;
+}
+
