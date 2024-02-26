@@ -16,9 +16,24 @@ const Page = () => {
         setTableData(result)
     }
 
-    useEffect(()=>{
+    const Mydebounce=(fn,d)=>{
+      let timer
 
-    })
+      const debounce =(...args)=>{
+
+        if(timer) clearInterval(timer)
+          timer= setTimeout(() =>fn(...args) , d);
+      };
+
+      return debounce
+    }
+
+    const myfunct=(...arg)=>{
+      console.log(...arg)
+    }
+
+    const debounceFunction=Mydebounce(myfunct,500)
+    debounceFunction(100,100,100,100)
 
   return (
     <div className='pt-[200px] pl-[200px]'>
@@ -27,17 +42,17 @@ const Page = () => {
         value={searchQuery}
         onChange={handleSearch}
         />
-        {/* {data.map((data)=>(
-            <div>{data.name}</div>
-        ))} */}
+      
 
-
-        {Tabledata.map((searcData,key)=>(
+{/*   {Tabledata.map((searcData,key)=>(
            <div key={key} className=''>
             {searcData.name}
            </div> 
-         
-        ))}
+        ))} */}
+
+        <div onClick={()=>debounceFunction(100,100,103)}>
+        click me
+        </div>
        
     </div>
   )

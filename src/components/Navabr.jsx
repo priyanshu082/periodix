@@ -1,68 +1,79 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SearchElementCard from "./SearchElementCard";
-
+import { searchInput } from "@/utils/navbar";
+import { myDebounce } from "@/utils/debounce";
 
 const Navabr = () => {
-
-    
-  const data=require('../utils/data.json')
+  const data = require("../utils/data.json");
   const [display, setDisplay] = useState(false);
-  const [active, setActive] = useState("");
-  const [filterData,setFilterData]= useState(data)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [active, setActive] = useState("atomicNumber");
+  const [filterData, setFilterData] = useState(data);
+  const [searchQuery, setSearchQuery] = useState("");
 
-//   useEffect(()=>{
-//     setFilterData(data)
-//   },[data])
+  //   search function
+  const functToSetQuery = (value) => {
+    setSearchQuery(value);
+  };
+  const debounceString = myDebounce(functToSetQuery, 1);
 
-  const handleSearch=(event)=>{
-    setSearchQuery(event.target.value)
-    const result = data.filter(item=>item.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    setFilterData(result)
-  }
+  useEffect(() => {
+    if (searchQuery !== "") {
+      const result = data.filter((item) =>
+        item[active].toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilterData(result);
+    } else {
+      setFilterData(data);
+    }
 
-  const searchInput = [
-    { name: "Atomic Number" },
-    { name: "Name" },
-    { name: "symbol" },
-  ];
-
+    console.log("succesfull");
+  });
 
   return (
     <div className="flex flex-col text-white z-50 w-full fixed bg-zinc-900 shadow-lg shadow-zinc-800 ">
-
-    {/* navbar content  */}
+      {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}
         <div className="logo">Periodically-2.0</div>
 
         {/* searchbar */}
-        <div
-          onClick={() => setDisplay(!display)}
-          className="border-[2px] border-red-600 rounded-xl px-[10px]"
-        >
-          <input
-            className="bg-transparent h-[40px] w-[30vw] outline-none"
-            placeholder="Search Element by name || number || symbol"
-            value={searchQuery}
-            onChange={handleSearch}
-          />
+        <div className="flex flex-row items-center border-[2px] border-red-600 pr-[10px]">
+          <div
+            onClick={() => setDisplay(true)}
+            className="  rounded-xl px-[10px] flex flex-row items-center"
+          >
+            <input
+              className="bg-transparent h-[40px] w-[30vw] outline-none"
+              placeholder="Search Element by name || number || symbol"
+              value={searchQuery}
+              onChange={(event) => debounceString(event.target.value)}
+            />
+          </div>
+
+          <div onClick={() => setDisplay(false)}>
+            <div
+              className={`${
+                display ? "opacity-100" : "opacity-0"
+              } rounded-full cursor-pointer font-bold  text-[13px] w-[20px] items-center text-center`}
+            >
+              X
+            </div>
+          </div>
         </div>
 
         {/* {history page},explore page */}
         <div className="flex flex-row gap-5">
-        <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
-          Explore
+          <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
+            Explore
+          </div>
+          <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
+            History
+          </div>
         </div>
-        <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
-          History
-        </div>
-        </div>
-
       </div>
 
-    {/* displaying of search by category */}
+      {/* displaying of search by category */}
       <div
         className={`${
           display ? " flex flex-col" : " hidden"
@@ -83,18 +94,17 @@ const Navabr = () => {
           ))}
         </div>
 
-
         {/* div for displaying searching result */}
         <div className="mt-[20px] w-[100%] h-[420px]">
-            <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
-            {filterData.map((data)=>(
-             <SearchElementCard data={data}/>
+          <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
+            {filterData.map((data, key) => (
+              <div key={key} className="">
+                <SearchElementCard data={data} />
+              </div>
             ))}
-            </div>
+          </div>
         </div>
-
       </div>
-      
     </div>
   );
 };
