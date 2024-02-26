@@ -8,55 +8,61 @@
 .element{
   height: 70px;
   width: 70px;
-  border-radius: 10px;
-  padding: 3px;
-  margin: 5px;
-  background-color: rgba(59, 58, 58, 0.789);
-  font-family: "Dancing Script", cursive;
+  border-radius: 5px;
+ 
+  margin: 2px;
+  font-family: "sans-serif";
   color: white;
 }
 
 .transition{
-  background-color:rgb(174, 36, 36);
+  border: 2px solid rgb(174, 36, 36);
 }
 
 .alkali{
-  background-color: blue;
+  border: 2px solid blue;
 }
 
 .alkaline{
-  background-color: rgb(35, 91, 165);
+  border: 2px solid rgb(35, 91, 165);
 }
 
 .noble{
-  background-color: lightblue;
+  border: 2px solid lightblue;
 }
 
 .metalloid{
-  background-color: rgba(62, 155, 15, 0.876);
+  border: 2px solid rgba(62, 155, 15, 0.876);
 }
 
 .nonmetal{
-background-color: fuchsia;
+border: 2px solid fuchsia;
 }
 
 .lanthanoid{
-  background-color: darkseagreen;
+  border: 2px solid darkseagreen;
 }
 
 .actinoid{
-  background-color: yellow;
+  border: 2px solid yellow;
 }
 
 .metal{
-  background-color: rgb(119, 50, 175);
+  border: 2px solid rgb(119, 50, 175);
 }
 
 .halogen{
-  background-color: orange;
+  border: 2px solid orange;
 }
 
 .post-transition{
-  background-color: cadetblue;
+  border: 2px solid cadetblue;
 }
 
+.logo{
+  width: fit-content;
+  margin: 20px 30px;
+  padding: 7px 20px;
+  border: 2px solid red;
+  border-radius: 14px;
+}

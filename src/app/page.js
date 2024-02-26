@@ -49,7 +49,10 @@ export default function Home() {
   const data = require("./../../data.json");
 
   return (
-    <div className="bg-black h-[100vh] pt-[100px] absolute">
+    <div className="bg-zinc-900 overflow-x-scroll">
+   <div className="h-[100vh] mt-[130px] flex flex-col px-[10px] w-[1355px] mx-auto">
+
+      <div>
       {/* period 1 */}
       {data && (
         <div className="flex flex-row justify-between">
@@ -140,7 +143,7 @@ export default function Home() {
 
       {/* period 4 */}
       {data && (
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-grow w-1/18 flex-row justify-between">
           {data.map((element, key) => (
             <div
               key={key}
@@ -181,7 +184,14 @@ export default function Home() {
                   : "hidden"
               }`}
             >
-              <Element data={element} />
+              {element.atomicNumber === "71" ? (
+                <div className="element ">
+                  <div className="text-center pt-[16px] ">57-71</div>
+                  <div className="text-[11px] text-center">Lanthanides</div>
+                </div>
+              ) : (
+                <Element data={element} />
+              )}
             </div>
           ))}
         </div>
@@ -201,12 +211,27 @@ export default function Home() {
                   : "hidden"
               }`}
             >
-              <Element data={element} />
+              {element.atomicNumber === "103" ? (
+                <div className="element ">
+                  <div className="text-center pt-[16px] ">89-103</div>
+                  <div className="text-[12px] text-center">Actinides</div>
+                </div>
+              ) : (
+                <Element data={element} />
+              )}
             </div>
           ))}
         </div>
       )}
-      
+
+      </div>
+
+      <div>
+
+      </div>
+
+
+    </div>
     </div>
   );
 }
