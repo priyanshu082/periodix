@@ -6,7 +6,7 @@ const Element = ({data}) => {
     const parts=data.groupBlock.split(' ')
     const name=parts[0]
   return (
-    <div className='hover:scale-105 cursor-pointer transition-all duration-300 ease-in-out'>
+    <div className=' cursor-pointer transition-all duration-300 ease-in-out'>
     <div className={`${name} element leading-[16px] pt-[3px]`}>
 
         <span className='pl-[3px]'>{data.atomicNumber}</span>

@@ -1,11 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchElementCard from "./SearchElementCard";
 
 
 const Navabr = () => {
+
+    
+  const data=require('../utils/data.json')
   const [display, setDisplay] = useState(false);
   const [active, setActive] = useState("");
+  const [filterData,setFilterData]= useState(data)
+  const [searchQuery, setSearchQuery] = useState('')
+
+//   useEffect(()=>{
+//     setFilterData(data)
+//   },[data])
+
+  const handleSearch=(event)=>{
+    setSearchQuery(event.target.value)
+    const result = data.filter(item=>item.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    setFilterData(result)
+  }
 
   const searchInput = [
     { name: "Atomic Number" },
@@ -13,11 +28,11 @@ const Navabr = () => {
     { name: "symbol" },
   ];
 
-  const data=require('./../../data.json')
-
 
   return (
     <div className="flex flex-col text-white z-50 w-full fixed bg-zinc-900 shadow-lg shadow-zinc-800 ">
+
+    {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}
         <div className="logo">Periodically-2.0</div>
@@ -30,6 +45,8 @@ const Navabr = () => {
           <input
             className="bg-transparent h-[40px] w-[30vw] outline-none"
             placeholder="Search Element by name || number || symbol"
+            value={searchQuery}
+            onChange={handleSearch}
           />
         </div>
 
@@ -45,6 +62,7 @@ const Navabr = () => {
 
       </div>
 
+    {/* displaying of search by category */}
       <div
         className={`${
           display ? " flex flex-col" : " hidden"
@@ -66,12 +84,13 @@ const Navabr = () => {
         </div>
 
 
-        {/* div for dispplayin searching result */}
-        <div className="mt-[30px] w-[100%] h-[300px] overflow-scroll ">
-            {data.map((data,key)=>(
+        {/* div for displaying searching result */}
+        <div className="mt-[20px] w-[100%] h-[420px]">
+            <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
+            {filterData.map((data)=>(
              <SearchElementCard data={data}/>
-            // <div>priyanshu</div>
             ))}
+            </div>
         </div>
 
       </div>

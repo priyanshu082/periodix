@@ -46,7 +46,7 @@ export default function Home() {
   //    return <p>Error:{error.message}</p>
   //  }
 
-  const data = require("./../../data.json");
+  const data = require("../utils/data.json");
 
   return (
     <div className="bg-zinc-900 overflow-x-scroll">
