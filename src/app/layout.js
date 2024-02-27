@@ -1,5 +1,6 @@
 import Navabr from "@/components/Navabr";
 import "./globals.css";
+import { TableProvider } from "@/useContext/UseContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
-        <Navabr/>
+<TableProvider>
+      <Navabr/>
        {children}
+</TableProvider>
         </body>
     </html>
   );

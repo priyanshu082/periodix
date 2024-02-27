@@ -1,13 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SearchElementCard from "./SearchElementCard";
 
 import { myDebounce } from "@/utils/debounce";
+import { usePeriodicTable } from "../useContext/UseContext";
 
 const Navabr = () => {
-  
   const data = require("../utils/data.json");
   const [display, setDisplay] = useState(false);
+
+
+
+
+
+  const [setElement] =usePeriodicTable()
+
+
+
 
 
   const [filterData, setFilterData] = useState(data);
@@ -18,29 +27,30 @@ const Navabr = () => {
     setSearchQuery(value);
   };
 
-
   const debounceString = myDebounce(functToSetQuery, 1);
 
   useEffect(() => {
     if (searchQuery !== "") {
-        const result = data.filter((item) =>(
+      const result = data.filter(
+        (item) =>
           item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.symbol.toLowerCase().includes(searchQuery.toLowerCase())||
+          item.symbol.toLowerCase().includes(searchQuery.toLowerCase()) ||
           item.number.toString().includes(searchQuery.toString().toLowerCase())
-        ));
-        setFilterData(result);
-
+      );
+      setFilterData(result);
     } else {
       setFilterData(data);
     }
-  },[searchQuery,data]);
+  }, [searchQuery, data]);
 
   return (
     <div className="flex flex-col text-zinc-200 font1 z-50 w-full fixed bg-[#1f2e39] shadow-lg shadow-zinc-800 py-[10px]">
       {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}
-        <div className="h-[60px] w-fit text-[23px] text-center flex justify-center items-center ml-[50px]">PERIODIC-2.0</div>
+        <div className="h-[60px] w-fit text-[23px] text-center flex justify-center items-center ml-[50px]">
+          PERIODIC-2.0
+        </div>
 
         {/* searchbar */}
         <div className="flex flex-row items-center border-[0.5px] border-zinc-500 rounded-xl pr-[10px]">
@@ -69,12 +79,8 @@ const Navabr = () => {
 
         {/* {history page},explore page */}
         <div className="flex flex-row gap-5 text-zinc-300 text-[15px]">
-          <div className="px-[20px] py-[6px] rounded-xl">
-            EXPLORE
-          </div>
-          <div className="px-[20px] py-[6px] rounded-xl">
-            HISTORY
-          </div>
+          <div className="px-[20px] py-[6px] rounded-xl">EXPLORE</div>
+          <div className="px-[20px] py-[6px] rounded-xl">HISTORY</div>
         </div>
       </div>
 
@@ -84,12 +90,13 @@ const Navabr = () => {
           display ? " flex flex-col" : " hidden"
         } bg-transparent w-[33vw] ml-[31.75vw] justify-center items-center`}
       >
-        
         {/* div for displaying searching result */}
         <div className="mt-[20px] w-[100%] h-[420px]">
           <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
             {filterData.map((data, key) => (
-              <div key={key} className="">
+              <div 
+              onClick={()=>setElement(data)}
+              key={key} className="">
                 <SearchElementCard data={data} />
               </div>
             ))}

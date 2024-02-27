@@ -57,13 +57,11 @@ export default function Home() {
 
   return (
     <div className="bg-[#1f2e39] overflow-x-scroll">
-      <div className="h-[100vh] mt-[110px] w-[1320px] mx-auto">
-
-
-      
+      <div className="h-[100vh] mt-[120px] w-[1320px] mx-auto">
 
         <div className="periodictable ">
-        <div className="relative w-[680px] h-[220px] ml-[100px] font1 flex flex-row justify-around">
+
+        <div className="relative w-[680px] h-[190px] ml-[100px] font1 flex flex-row justify-around">
         <div 
         style={{
           color:"#dadcca",
@@ -89,6 +87,9 @@ export default function Home() {
         {activeElement.summary}
         </div>
       </div>
+
+
+
           {data.map((data) => (
              <div style={{
               gridRow: data.ypos,
