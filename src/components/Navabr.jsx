@@ -1,13 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SearchElementCard from "./SearchElementCard";
-import { searchInput } from "@/utils/navbar";
+
 import { myDebounce } from "@/utils/debounce";
 
 const Navabr = () => {
+  
   const data = require("../utils/data.json");
   const [display, setDisplay] = useState(false);
-  const [active, setActive] = useState("atomicNumber");
+
+
   const [filterData, setFilterData] = useState(data);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -15,36 +17,35 @@ const Navabr = () => {
   const functToSetQuery = (value) => {
     setSearchQuery(value);
   };
+
+
   const debounceString = myDebounce(functToSetQuery, 1);
 
   useEffect(() => {
     if (searchQuery !== "") {
-      const result = data.filter((item) =>
-        item[active].toLowerCase().includes(searchQuery.toLowerCase())
+      const result = data.filter((item) =>item.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setFilterData(result);
     } else {
       setFilterData(data);
     }
-
-    console.log("succesfull");
   });
 
   return (
-    <div className="flex flex-col text-white z-50 w-full fixed bg-zinc-900 shadow-lg shadow-zinc-800 ">
+    <div className="flex flex-col text-zinc-200 font1 z-50 w-full fixed bg-[#1f2e39] shadow-lg shadow-zinc-800 py-[10px]">
       {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}
-        <div className="logo">Periodically-2.0</div>
+        <div className="h-[60px] w-fit text-[23px] text-center flex justify-center items-center ml-[50px]">PERIODIC-2.0</div>
 
         {/* searchbar */}
-        <div className="flex flex-row items-center border-[2px] border-red-600 pr-[10px]">
+        <div className="flex flex-row items-center border-[0.5px] border-zinc-500 rounded-xl pr-[10px]">
           <div
             onClick={() => setDisplay(true)}
             className="  rounded-xl px-[10px] flex flex-row items-center"
           >
             <input
-              className="bg-transparent h-[40px] w-[30vw] outline-none"
+              className="bg-transparent h-[40px] w-[30vw] outline-none placeholder:text-[15px] placeholder:font-light"
               placeholder="Search Element by name || number || symbol"
               value={searchQuery}
               onChange={(event) => debounceString(event.target.value)}
@@ -63,12 +64,12 @@ const Navabr = () => {
         </div>
 
         {/* {history page},explore page */}
-        <div className="flex flex-row gap-5">
-          <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
-            Explore
+        <div className="flex flex-row gap-5 text-zinc-300 text-[15px]">
+          <div className="px-[20px] py-[6px] rounded-xl">
+            EXPLORE
           </div>
-          <div className=" bg-red-600 text-white px-[20px] py-[6px] rounded-xl">
-            History
+          <div className="px-[20px] py-[6px] rounded-xl">
+            HISTORY
           </div>
         </div>
       </div>
@@ -79,20 +80,7 @@ const Navabr = () => {
           display ? " flex flex-col" : " hidden"
         } bg-transparent w-[33vw] ml-[32.5vw] justify-center items-center`}
       >
-        {/* name || symbol || number */}
-        <div className="flex flex-row w-full ">
-          {searchInput.map((data, key) => (
-            <div
-              key={key}
-              onClick={() => setActive(data.name)}
-              className={`${
-                active === data.name ? "bg-red-600" : " "
-              } cursor-pointer transition-colors duration-500 ease-in-out border-[1px] py-[3px] border-red-600 rounded-md text-center text-[14px] font-bold mr-[2px] w-1/3`}
-            >
-              {data.name}
-            </div>
-          ))}
-        </div>
+        
 
         {/* div for displaying searching result */}
         <div className="mt-[20px] w-[100%] h-[420px]">
