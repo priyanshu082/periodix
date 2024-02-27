@@ -57,8 +57,13 @@ export default function Home() {
 
   return (
     <div className="bg-[#1f2e39] overflow-x-scroll">
-      <div className="h-[100vh] mt-[110px] px-[10px] w-[1320px] mx-auto">
-      <div className="absolute w-[680px] h-[220px] ml-[170px] font1 flex flex-row justify-around">
+      <div className="h-[100vh] mt-[110px] w-[1320px] mx-auto">
+
+
+      
+
+        <div className="periodictable ">
+        <div className="relative w-[680px] h-[220px] ml-[100px] font1 flex flex-row justify-around">
         <div 
         style={{
           color:"#dadcca",
@@ -79,23 +84,21 @@ export default function Home() {
         style={{
           color:"#dadcca"
         }}
-        className=" w-[80%] text-[15px] pt-[20px] overflow-scroll scrollbar-hide">
+        className=" w-[75%] text-[15px] pt-[20px] overflow-scroll scrollbar-hide">
           <p className="text-[30px] mb-[10px] font-bold text-">{activeElement.name}</p>
         {activeElement.summary}
         </div>
       </div>
-
-        <div className="periodictable ">
           {data.map((data) => (
              <div style={{
               gridRow: data.ypos,
               gridColumn: data.xpos,
               color: activeElement.number===data.number ? "black" : colorCode[data.category],
               backgroundColor: activeElement.number===data.number ? colorCode[data.category] : "transparent",
-              transition: "background-color 0.3s ease-in",
+              transition: "background-color 0.2s ease-in-out",
             }} 
             className={`
-            ${t(data.number) ? "border-b-[0.5px] border-l-[0.5px] border-r-[0.5px]" : "border-[0.5px]" } border-zinc-600 `} 
+            ${t(data.number) ? "border-b-[0.5px] cursor-pointer  border-l-[0.5px] border-r-[0.5px]" : "border-[0.5px]" } border-zinc-600 `} 
               onClick={()=>setActiveElement(data)}
             key={data.number}>
               <div

@@ -23,13 +23,17 @@ const Navabr = () => {
 
   useEffect(() => {
     if (searchQuery !== "") {
-      const result = data.filter((item) =>item.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilterData(result);
+        const result = data.filter((item) =>(
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.symbol.toLowerCase().includes(searchQuery.toLowerCase())||
+          item.number.toString().includes(searchQuery.toString().toLowerCase())
+        ));
+        setFilterData(result);
+
     } else {
       setFilterData(data);
     }
-  });
+  },[searchQuery,data]);
 
   return (
     <div className="flex flex-col text-zinc-200 font1 z-50 w-full fixed bg-[#1f2e39] shadow-lg shadow-zinc-800 py-[10px]">
@@ -46,7 +50,7 @@ const Navabr = () => {
           >
             <input
               className="bg-transparent h-[40px] w-[30vw] outline-none placeholder:text-[15px] placeholder:font-light"
-              placeholder="Search Element by name || number || symbol"
+              placeholder="Explore More!"
               value={searchQuery}
               onChange={(event) => debounceString(event.target.value)}
             />
@@ -78,10 +82,9 @@ const Navabr = () => {
       <div
         className={`${
           display ? " flex flex-col" : " hidden"
-        } bg-transparent w-[33vw] ml-[32.5vw] justify-center items-center`}
+        } bg-transparent w-[33vw] ml-[31.75vw] justify-center items-center`}
       >
         
-
         {/* div for displaying searching result */}
         <div className="mt-[20px] w-[100%] h-[420px]">
           <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">

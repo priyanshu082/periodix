@@ -61,10 +61,6 @@ import React from 'react'
 const Page = () => {
 
   const elements=require('../../utils/data.json')
-  const elements2=require('../../utils/data2.json')
-
-  console.log(elements.length)
-  console.log(elements2.length)
 
   return (
     <div className="periodictable bg-black pt-[200px]">
