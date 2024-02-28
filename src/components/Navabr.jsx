@@ -9,15 +9,7 @@ const Navabr = () => {
   const data = require("../utils/data.json");
   const [display, setDisplay] = useState(false);
 
-
-
-
-
-  const [setElement] =usePeriodicTable()
-
-
-
-
+  const [tableData,element,setElement,number,setNumber] =usePeriodicTable()
 
   const [filterData, setFilterData] = useState(data);
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,6 +20,10 @@ const Navabr = () => {
   };
 
   const debounceString = myDebounce(functToSetQuery, 1);
+
+  const updateElement=(number)=>{
+    setElement(data[number])
+  }
 
   useEffect(() => {
     if (searchQuery !== "") {
@@ -56,7 +52,7 @@ const Navabr = () => {
         <div className="flex flex-row items-center border-[0.5px] border-zinc-500 rounded-xl pr-[10px]">
           <div
             onClick={() => setDisplay(true)}
-            className="  rounded-xl px-[10px] flex flex-row items-center"
+            className="rounded-xl px-[10px] flex flex-row items-center"
           >
             <input
               className="bg-transparent h-[40px] w-[30vw] outline-none placeholder:text-[15px] placeholder:font-light"
@@ -95,7 +91,12 @@ const Navabr = () => {
           <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
             {filterData.map((data, key) => (
               <div 
-              onClick={()=>setElement(data)}
+              onClick={()=>setNumber(prevNumber=>{
+                const newNumber=data.number-1;
+                updateElement(newNumber);
+                setDisplay(false)
+                return newNumber
+              })}
               key={key} className="">
                 <SearchElementCard data={data} />
               </div>

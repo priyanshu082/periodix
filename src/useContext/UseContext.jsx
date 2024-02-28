@@ -1,5 +1,6 @@
 'use client'
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+
 
 export const TableContext=createContext();
 
@@ -7,10 +8,13 @@ export const TableProvider = ({children}) => {
 
     const data=require('../utils/data.json')
 
-    const [element, setElement]=useState(data[0]);
-
+    const [tableData,setTableData]=useState(data)
+    
+    const [number,setNumber]=useState(0);
+    const [element, setElement]=useState(tableData[number]);
+    
   return (
-    <TableContext.Provider value={[element,setElement]}>
+    <TableContext.Provider value={[tableData,element,setElement,number,setNumber]}>
         {children}
     </TableContext.Provider>
   )
