@@ -81,6 +81,22 @@ export const left=[3,11,19,37,55,87,57,89]
 
 export const right=[10,18,36,54,86,118,71,103]
 
+export const ElementData=[
+  {id:1 , name:"Atomic Mass" , detail:"atomic_mass"},
+  {id:15, name:"Period" , detail:"period"},
+  {id:2 , name:"Standard State" , detail:"phase"},
+  {id:3 , name:"Electronic Configuration Semantic" , detail:"electron_configuration_semantic"},
+  {id:3 , name:"Electronic Configuration" , detail:"electron_configuration"},
+  {id:4 , name:"Oxidation State" , detail:"atomic_mass"},
+  {id:5 , name:"Electron Negativity" , detail:"electronegativity_pauling"},
+  {id:8 , name:"Electron Affinity" , detail:"electron_affinity"},
+
+  {id:11 ,name:"Density" , detail:"density"},
+  {id:13, name:"Discovered by" , detail:"discovered_by"},
+
+ 
+]
+
 
 
 

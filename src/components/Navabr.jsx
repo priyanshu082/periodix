@@ -4,6 +4,7 @@ import SearchElementCard from "./SearchElementCard";
 
 import { myDebounce } from "@/utils/debounce";
 import { usePeriodicTable } from "../useContext/UseContext";
+import Link from "next/link";
 
 const Navabr = () => {
   const data = require("../utils/data.json");
@@ -44,9 +45,14 @@ const Navabr = () => {
       {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}
+        <Link 
+        href='/'
+        >
         <div className="h-[60px] w-fit text-[23px] text-center flex justify-center items-center ml-[50px]">
           PERIODIC-2.0
         </div>
+        </Link>
+        
 
         {/* searchbar */}
         <div className="flex flex-row items-center border-[0.5px] border-zinc-500 rounded-xl pr-[10px]">
@@ -90,7 +96,9 @@ const Navabr = () => {
         <div className="mt-[20px] w-[100%] h-[420px]">
           <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
             {filterData.map((data, key) => (
-              <div 
+              <Link
+              href='/elementpage'>
+                 <div 
               onClick={()=>setNumber(prevNumber=>{
                 const newNumber=data.number-1;
                 updateElement(newNumber);
@@ -100,6 +108,8 @@ const Navabr = () => {
               key={key} className="">
                 <SearchElementCard data={data} />
               </div>
+              </Link>
+           
             ))}
           </div>
         </div>
