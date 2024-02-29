@@ -1,8 +1,18 @@
 import React from 'react'
 import { colorCode,top } from '@/utils/utils';
+import Link from 'next/link';
+import { usePeriodicTable } from "../useContext/UseContext";
 
 
 const PeriodicElement = ({data,setActiveElement,setCursor,activeElement}) => {
+
+const data2=require('../utils/data.json')
+  const [tableData,element,setElement,number,setNumber] =usePeriodicTable()
+
+  const updateElement=(number)=>{
+    setElement(data2[number])
+  }
+  
 
     function t(number) {
         return top.includes(number);
@@ -32,6 +42,12 @@ const PeriodicElement = ({data,setActiveElement,setCursor,activeElement}) => {
             setCursor(true),setActiveElement([]);
           }}
 
+          onClick={()=>setNumber(prevNumber=>{
+            const newNumber=data.number-1;
+            updateElement(newNumber);
+            return newNumber
+          })}
+
           className={`
         ${t(data.number)
             ? "border-b-[0.5px] cursor-pointer  border-l-[0.5px] border-r-[0.5px]"
@@ -40,7 +56,7 @@ const PeriodicElement = ({data,setActiveElement,setCursor,activeElement}) => {
 
         
         >
-       
+       <Link href='/elementpage'>
           <div className={` leading-[16px]`}>
             <span className="pl-[2px] text-[10px]">{data.number}</span>
             <div className="flex flex-col text-center justify-center items-center pt-[5px]">
@@ -48,6 +64,7 @@ const PeriodicElement = ({data,setActiveElement,setCursor,activeElement}) => {
               <span className="text-[10px] pt-[5px]">{data.name}</span>
             </div>
           </div>
+       </Link>
      
         </div>
    

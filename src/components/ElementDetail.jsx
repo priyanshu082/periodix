@@ -5,6 +5,7 @@ import arrow from '../../public/next.svg'
 import Image from 'next/image'
 import { ElementData, colorCode } from '@/utils/utils'
 
+
 const ElementDetail = () => {
     
    
@@ -122,7 +123,7 @@ const ElementDetail = () => {
         color:colorCode[element.category]
       }}
       
-      className='w-[65%] h-[650px] bg-[#151515] rounded-lg text-[40px] poppins flex flex-col justify-center items-center'>
+      className='w-[65%] h-[650px] backgroundCursorDiv rounded-lg text-[40px] poppins flex flex-col justify-center items-center'>
         Futher details will be added here
       </div>
         </div>

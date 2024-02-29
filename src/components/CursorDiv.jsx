@@ -6,7 +6,7 @@ const CursorDiv = ({activeElement,cursor}) => {
 
   return (
     <div 
-      className='w-[350px] h-fit rounded-lg bg-zinc-900 pb-[10px]'>
+      className='w-[350px] h-fit rounded-lg backgroundCursorDiv pb-[10px]'>
         
         {/* upper section */}
         <div className='flex flex-row justify-around text-white py-[5px] poppins '>

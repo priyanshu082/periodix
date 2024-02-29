@@ -15,6 +15,7 @@ export default function Home() {
   const main = useRef(null);
 
 
+//  for handlling the cursor div
   useEffect(() => {
     const crsr = document.querySelector(".cursor");
 
@@ -52,11 +53,10 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.div ref={main} className="bg-[#1f2e39] overflow-x-scroll">
+    <motion.div ref={main} className="background overflow-x-scroll">
 
 
 {/* cursor div for elment detail */}
-
       <motion.div
       variants={slideUp(0.1,0.5)}
       animate={!cursor ? "show" : "hidden"}

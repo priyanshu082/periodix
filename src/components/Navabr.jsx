@@ -41,7 +41,7 @@ const Navabr = () => {
   }, [searchQuery, data]);
 
   return (
-    <div className="flex flex-col text-zinc-200 font1 z-50 w-full fixed bg-[#1f2e39] shadow-lg shadow-zinc-800 py-[10px]">
+    <div className="flex flex-col text-zinc-200 font1 z-50 w-full fixed backgroundNav shadow-lg shadow-zinc-900 py-[10px]">
       {/* navbar content  */}
       <div className=" flex flex-row justify-between items-center pr-[40px]">
         {/* logo */}

@@ -84,3 +84,18 @@ border: 2px solid fuchsia;
   /* font-family: "Micro 5", sans-serif; */
   font-family: "Kode Mono", monospace; 
 }
+
+.background{
+  background: rgb(2,4,29);
+  background: radial-gradient(circle, rgba(2, 2, 23, 0.965) 10%, rgb(0, 0, 0) 50%);
+}
+
+.backgroundNav{
+  background: rgb(2,4,29);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.965) 10%, rgb(0, 0, 0) 50%);
+}
+
+.backgroundCursorDiv{
+  background: rgb(55,24,71);
+  background: linear-gradient(335deg, rgb(2, 5, 52) 0%, rgb(0, 0, 0) 80%);
+}
