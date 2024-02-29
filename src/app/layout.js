@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <Head>
       <meta property="og:title" content={metadata.title} />
       <meta name="description" content={metadata.description} />
-      <meta rel="icon" href="public/p.png" />
+      <meta rel="icon" href="/p.png" />
     </Head>
     <body className="background fix">
       

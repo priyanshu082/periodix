@@ -31,7 +31,7 @@ const Footer = () => {
     </div>
     
     <div className=" border-zinc-500 text-zinc-300 py-[10px] text-[15px] tracking-tighter flex flex-row text-center justify-center">
-            <p className="font-bold">Developed By Priyanshu Singh</p>
+            <p>Developed By Priyanshu Singh</p>
             <a href='https://github.com/priyanshu082' target="_blank" rel="noopener noreferrer" className='ml-[10px] pb-[4px]'>
   <GitHubIcon className='  w-[20px] h-[20px] text-cyan-600'/>
 </a> 

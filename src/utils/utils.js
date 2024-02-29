@@ -85,7 +85,7 @@ export const ElementData=[
   {id:1 , name:"Atomic Mass" , detail:"atomic_mass"},
   {id:2, name:"Period" , detail:"period"},
   {id:3 , name:"Standard State" , detail:"phase"},
-  {id:4 , name:"Electronic Configuration" , detail:"electron_configuration_semantic"},
+  {id:4 , name:"Electronic Confi" , detail:"electron_configuration_semantic"},
   {id:5 , name:"Oxidation State" , detail:"atomic_mass"},
   {id:6 , name:"Electron Negativity" , detail:"electronegativity_pauling"},
   {id:7 , name:"Electron Affinity" , detail:"electron_affinity"},
