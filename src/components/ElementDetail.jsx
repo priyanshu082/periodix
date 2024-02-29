@@ -19,10 +19,10 @@ const ElementDetail = () => {
 
     return (
 
-     <div className='flex flex-row w-full justify-around poppins2'>
+     <div className='flex flex-col md:flex-row w-full justify-around poppins2'>
     {/* left section */}
       <div 
-      className='w-[30%] h-[650px] rounded-lg'>
+      className=' md:w-[30%] h-[650px] rounded-lg'>
         
         {/* upper section */}
         <div className='flex flex-row justify-around text-white py-[10px]  '>
@@ -107,13 +107,12 @@ const ElementDetail = () => {
       </div>
 
       {/* rightsection */}
-
       <div 
       style={{
         color:colorCode[element.category]
       }}
       
-      className='w-[65%] h-[630px] backgroundCursorDiv overflow-scroll rounded-lg  flex flex-col px-[20px]'>
+      className='md:w-[65%] h-[630px] backgroundCursorDiv overflow-scroll rounded-lg  flex flex-col px-[20px]'>
 
         <div className='flex flex-row justify-around w-[100%] mx-auto mt-[20px] border-b-[1px] border-zinc-700 pb-[20px]'>
 
@@ -169,6 +168,7 @@ const ElementDetail = () => {
 
 
       </div>
+
         </div>
     )
 }
