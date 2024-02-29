@@ -83,16 +83,15 @@ export const right=[10,18,36,54,86,118,71,103]
 
 export const ElementData=[
   {id:1 , name:"Atomic Mass" , detail:"atomic_mass"},
-  {id:15, name:"Period" , detail:"period"},
-  {id:2 , name:"Standard State" , detail:"phase"},
-  {id:3 , name:"Electronic Configuration" , detail:"electron_configuration_semantic"},
-  // {id:3 , name:"Electronic Configuration" , detail:"electron_configuration"},
-  {id:4 , name:"Oxidation State" , detail:"atomic_mass"},
-  {id:5 , name:"Electron Negativity" , detail:"electronegativity_pauling"},
-  {id:8 , name:"Electron Affinity" , detail:"electron_affinity"},
-
-  {id:11 ,name:"Density" , detail:"density"},
-  {id:13, name:"Discovered by" , detail:"discovered_by"},
+  {id:2, name:"Period" , detail:"period"},
+  {id:3 , name:"Standard State" , detail:"phase"},
+  {id:4 , name:"Electronic Configuration" , detail:"electron_configuration_semantic"},
+  {id:5 , name:"Oxidation State" , detail:"atomic_mass"},
+  {id:6 , name:"Electron Negativity" , detail:"electronegativity_pauling"},
+  {id:7 , name:"Electron Affinity" , detail:"electron_affinity"},
+  {id:8 ,name:"Density" , detail:"density"},
+  {id:9, name:"Discovered by" , detail:"discovered_by"},
+  {id:10, name:"Molar Heat" , detail:"molar_heat"},
 
  
 ]

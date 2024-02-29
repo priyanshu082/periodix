@@ -48,8 +48,8 @@ const Navabr = () => {
         <Link 
         href='/'
         >
-        <div className="h-[60px] w-fit text-[23px] text-center flex justify-center items-center ml-[50px]">
-          PERIODIC-2.0
+        <div className="h-[60px] w-fit text-[28px] text-center flex justify-center tracking-widest items-center ml-[50px]">
+          PERIODIX
         </div>
         </Link>
         

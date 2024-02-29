@@ -41,14 +41,6 @@ const CursorDiv = ({activeElement,cursor}) => {
     </div>
         ))} 
 
-    <div className='flex flex-row justify-between border-b-[0.5px] border-zinc-700 mt-[8.5px] pb-[2px] text-[13px]'>
-    <span className='text-zinc-400 '>Melting Point</span>
-    <div>
-    <span className='pr-[5px]'>{Math.round(activeElement.melt)}°K ,</span>
-    <span className='pr-[5px]'>{Math.round(activeElement.melt)-273.15}°C ,</span>
-    <span className='pr-[5px]'>{Math.round((activeElement.melt - 273.15) * 1.8) + 32}°F</span>
-    </div>
-    </div>
 
     <div className='flex flex-row justify-between border-b-[0.5px] border-zinc-700 mt-[8.5px] pb-[2px] text-[13px]'>
     <span className='text-zinc-400 '>Boiling Point</span>
