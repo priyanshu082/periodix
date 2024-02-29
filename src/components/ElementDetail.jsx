@@ -20,15 +20,14 @@ const ElementDetail = () => {
     return (
 
      <div className='flex flex-row w-full justify-around'>
-{/* left section */}
+    {/* left section */}
       <div 
-      className='w-[30%] h-[650px] bg-[#151515] rounded-lg'>
-
-
+      className='w-[30%] h-[650px] rounded-lg'>
+        
         {/* upper section */}
         <div className='flex flex-row justify-around text-white py-[10px] poppins '>
 
-{number!==0 ? (  <div 
+    {number!==0 ? (  <div 
         className={` w-[50px] rotate-180 flex justify-center items-center cursor-pointer`}
         onClick={() => setNumber(prevNumber => {
             const newNumber = prevNumber - 1;
@@ -56,14 +55,13 @@ const ElementDetail = () => {
                 <p>{element.number}</p>
                 <div className='leading-[30px] pt-[15px]'>
                 <p className='text-[50px] font-bold'>{element.symbol}</p>
-                <p className='font-bold'>{element.name}</p>
+                <p className='font-bold '>{element.name}</p>
                 </div>
                 </div>
                
             </div>
 
-
-{number!==117 ? (  <div 
+        {number!==117 ? (  <div 
         className={` w-[50px] flex justify-center items-center cursor-pointer`}
         onClick={() => setNumber(prevNumber => {
             const newNumber = prevNumber + 1;

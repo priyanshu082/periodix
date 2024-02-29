@@ -64,8 +64,8 @@ border: 2px solid fuchsia;
 
 .periodictable {
   display: grid;
-  grid-template-columns: repeat(18, 73px);
-  grid-template-rows: repeat(10, 73px);
+  grid-template-columns: repeat(18, 75px);
+  grid-template-rows: repeat(10, 75px);
 }
 
 .font1{
@@ -74,4 +74,13 @@ border: 2px solid fuchsia;
 
 .poppins{
   font-family: "Poppins", sans-serif;
+}
+
+.transition-width{
+  min-width: 0px;
+  transition: width 1s ease-in-out;
+}
+
+.transition-width.expand{
+  width: 300px;
 }

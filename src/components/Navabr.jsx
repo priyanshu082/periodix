@@ -97,6 +97,7 @@ const Navabr = () => {
           <div className="w-[100%] h-[90%] overflow-scroll scrollbar-hide">
             {filterData.map((data, key) => (
               <Link
+              key={key}
               href='/elementpage'>
                  <div 
               onClick={()=>setNumber(prevNumber=>{
@@ -105,7 +106,7 @@ const Navabr = () => {
                 setDisplay(false)
                 return newNumber
               })}
-              key={key} className="">
+               className="">
                 <SearchElementCard data={data} />
               </div>
               </Link>
