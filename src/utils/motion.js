@@ -9,7 +9,7 @@ export const textVariant = (delay) => {
         opacity: 1,
         transition: {
           type: "tween",
-          duration: 0.3,
+          duration: 0.5,
           delay: delay,
         },
       },

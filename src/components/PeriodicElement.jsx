@@ -36,7 +36,7 @@ const PeriodicElement = ({data,setActiveElement,setCursor,activeElement}) => {
         ${t(data.number)
             ? "border-b-[0.5px] cursor-pointer  border-l-[0.5px] border-r-[0.5px]"
             : "border-[0.5px]"
-        } border-zinc-600 `}
+        } border-zinc-600 poppins `}
 
         
         >
