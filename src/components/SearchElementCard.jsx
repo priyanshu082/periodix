@@ -6,7 +6,6 @@ const SearchElementCard = ({data}) => {
    
 
   const parts=data.category
-  const color=colorCode[parts]
   return (
     
     <div className='w-[100%] p-[10px] bg-transparent flex flex-row justify-around items-center border-[1px] border-zinc-600 mt-[14px] rounded-md hover:scale-[98%] transition-all duration-300 ease-in-out poppins'>

@@ -20,8 +20,7 @@ export default function RootLayout({ children }) {
       <meta name="description" content={metadata.description} />
       <meta rel="icon" href="/p.png" />
     </Head>
-    <body className="background fix">
-      
+    <body className="">
       <TableProvider>
         <Navabr />
         {children}

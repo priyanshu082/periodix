@@ -6,7 +6,7 @@ const CursorDiv = ({activeElement,cursor}) => {
 
   return (
     <div 
-      className='w-[350px] h-fit rounded-lg backgroundCursorDiv pb-[10px]'>
+      className='w-[280px] md:w-[350px] h-fit rounded-lg backgroundCursorDiv pb-[10px]'>
         
         {/* upper section */}
         <div className='flex flex-row justify-around text-white py-[5px] poppins '>
@@ -36,7 +36,7 @@ const CursorDiv = ({activeElement,cursor}) => {
 
         {ElementData.map((data)=>(
     <div key={data.id} className='flex flex-row justify-between border-b-[0.5px] border-zinc-700 mt-[8.5px] pb-[2px] text-[13px]'>
-    <span className='text-zinc-400 '>{data.name}</span>
+    <span className='text-zinc-400 overflow-clip'>{data.name}</span>
     <span className='pr-[5px]'>{activeElement[data.detail]}</span>
     </div>
         ))} 
@@ -46,7 +46,7 @@ const CursorDiv = ({activeElement,cursor}) => {
     <span className='text-zinc-400 '>Boiling Point</span>
     <div>
     <span className='pr-[5px]'>{Math.round(activeElement.boil)}°K ,</span>
-    <span className='pr-[5px]'>{Math.round(activeElement.boil)}°C ,</span>
+    <span className='pr-[5px]'>{Math.round(activeElement.boil-273.15)}°C ,</span>
     <span className='pr-[5px]'>{Math.round((activeElement.boil - 273.15) * 1.8) + 32}°F</span>
     </div>
     </div>

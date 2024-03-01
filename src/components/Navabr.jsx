@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchElementCard from "./SearchElementCard";
 
 import { myDebounce } from "@/utils/debounce";

@@ -53,7 +53,7 @@ const ElementDetail = () => {
             className='text-white text-[14px] text-center flex flex-col justify-center items-center w-[50%]'>
                 <div className='w-fit px-[25px] hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer'>
                 <p>{element.number}</p>
-                <div className='leading-[30px] pt-[15px]'>
+                <div className='leading-[35px] pt-[15px]'>
                 <p className='text-[50px] font-bold'>{element.symbol}</p>
                 <p className='font-bold '>{element.name}</p>
                 </div>
@@ -71,9 +71,7 @@ const ElementDetail = () => {
         >
            <Image src={arrow}/>
         </div>):( <div 
-        className={`opacity-0 w-[50px] flex justify-center items-center`}
-       
-        >
+        className={`opacity-0 w-[50px] flex justify-center items-center`}>
            <Image src={arrow}/>
         </div>)}
           
@@ -87,7 +85,7 @@ const ElementDetail = () => {
         className=' w-[100%] px-[20px]  pt-[15px] '>
 
         {ElementData.map((data)=>(
-    <div key={data.id} className='flex flex-row justify-between border-b-[0.5px] border-zinc-700 mt-[18.5px] pb-[2px] text-[13px]'>
+    <div key={data.id} className='flex flex-row justify-between border-b-[0.5px] border-zinc-700 mt-[22.5px] pb-[2px] text-[13px]'>
     <span className='text-zinc-400 '>{data.name}</span>
     <span className='pr-[5px]'>{element[data.detail]}</span>
     </div>
@@ -112,7 +110,7 @@ const ElementDetail = () => {
         color:colorCode[element.category]
       }}
       
-      className='md:w-[65%] h-[630px] backgroundCursorDiv overflow-scroll rounded-lg  flex flex-col px-[20px]'>
+      className='md:w-[65%] h-[630px] backgroundCursorDiv overflow-scroll rounded-lg scrollbar-hide  flex flex-col px-[20px]'>
 
         <div className='flex flex-row justify-around w-[100%] mx-auto mt-[20px] border-b-[1px] border-zinc-700 pb-[20px]'>
 
@@ -138,7 +136,7 @@ const ElementDetail = () => {
 
 
         <div className='mt-[20px] mx-auto border-b-[1px] w-[100%] border-zinc-700 pb-[20px]'>
-            <p className=''>Spectrals Line:</p>
+            <div className=''>Spectrals Line:</div>
             <div className='bg-zinc-600 p-[5px] w-[90%] mx-auto mt-[15px] h-fit text-center'>
             <img src={element.spectral_img} alt='Image Not Available' className='w-[100%] text-white' />
             </div>
@@ -158,7 +156,7 @@ const ElementDetail = () => {
             ))}</p>
         </div>
         <div className='mt-[20px] mx-auto w-[100%]'>
-            <p className=''>MElting Point:</p>
+            <div className=''>Melting Point:</div>
             <div className='text-zinc-300 mt-[7px]'>
     <span className='pr-[5px]'>{Math.round(element.melt)}°K ,</span>
     <span className='pr-[5px]'>{Math.round(element.melt)-273.15}°C ,</span>
