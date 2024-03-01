@@ -44,7 +44,7 @@ const Navabr = () => {
     <div className="flex flex-col text-zinc-200 font1 z-50 w-[100vw] fixed backgroundNav shadow-lg shadow-zinc-900 p-[10px]  md:py-[10px]">
       {/* navbar content  */}
 
-      <div className="flex flex-row justify-between items-center pr-[40px]">
+      <div className="flex flex-row justify-between items-center pr-[20px] md:pr-[40px]">
         {/* logo */}
         <Link 
         href='/'
@@ -81,7 +81,7 @@ const Navabr = () => {
         </div>
 
         {/* {history page},explore page */}
-        <div className="flex flex-row gap-5 text-zinc-300 text-[15px]">
+        <div className="flex flex-row gap-3 md:gap-5 text-zinc-300 text-[15px]">
           <div className="md:px-[20px] py-[6px] rounded-xl">EXPLORE</div>
           <div className="md:px-[20px] py-[6px] rounded-xl">HISTORY</div>
         </div>

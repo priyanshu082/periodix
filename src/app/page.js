@@ -53,7 +53,7 @@ export default function Home() {
   }, []);
 
   return (
-    <motion.div ref={main} className="background overflow-x-scroll">
+    <motion.div ref={main} className="background overflow-x-scroll scrollbar-hide">
 
 
 {/* cursor div for elment detail */}
@@ -73,7 +73,7 @@ export default function Home() {
 
 
 
-      <motion.div className="h-[100vh] mt-[120px] w-[1348px] mx-auto">
+      <motion.div className="h-[100vh] mt-[150px] md:mt-[120px] w-[1348px] mx-auto">
         <motion.div className="periodictable ">
 
           <motion.div

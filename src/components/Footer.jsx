@@ -5,9 +5,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Footer = () => {
   return (
 
-    <div className="backgroundCursorDiv flex flex-col h-fit justify-center md:h-[300px]  poppins2">
+    <div className="backgroundCursorDiv flex flex-col h-fit justify-center md:h-[300px] border-t-[2px] border-zinc-700 poppins2">
 
- <div className=" flex flex-col md:flex-row justify-around pt-[20px] sm:pt-[45px] w-[100%] border-t-[2px] border-zinc-700 mt-[20px] h-[240px]">
+ <div className=" flex flex-col md:flex-row justify-around sm:pt-[45px] w-[100%] mt-[20px] h-fit">
       <div className="flex flex-col w-[90%] mx-auto md:w-[35%] md:text-left text-center">
         <div className="font1 font-bold text-zinc-300 text-[25px] ">
           PERIODIX
